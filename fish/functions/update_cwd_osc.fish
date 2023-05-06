@@ -1,1 +1,6 @@
-/nix/store/3r833marw05dqfxrh9v0ys3fpwdgwpsc-home-manager-files/.config/fish/functions/update_cwd_osc.fish
+function update_cwd_osc --description="Notify terminals when $PWD changes" --on-variable="PWD"
+    if status --is-command-substitution || set -q INSIDE_EMACS
+        return
+    end
+    printf \e\]7\;file://%s%s\e\\ $hostname (string escape --style=url $PWD)
+end

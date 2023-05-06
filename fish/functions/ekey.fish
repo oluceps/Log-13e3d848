@@ -1,1 +1,3 @@
-/nix/store/3r833marw05dqfxrh9v0ys3fpwdgwpsc-home-manager-files/.config/fish/functions/ekey.fish
+function ekey --description="edit agenix-rekey secret"
+    nix run .#edit-secret $argv[1]
+end

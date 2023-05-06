@@ -1,1 +1,3 @@
-/nix/store/3r833marw05dqfxrh9v0ys3fpwdgwpsc-home-manager-files/.config/fish/functions/dec.fish
+function dec
+    rage -d -i ~/.ssh/age/priv.age $argv[1]
+end
